@@ -8,25 +8,24 @@
 </head>
 <body>
   <div class="wrapper">
-    <header>
-      <div class="brand">Dowa9a</div>
-      <div class="rule"></div>
-      <div class="subrow">
-        <div class="small left">Dowa9y.</div>
-        <div class="small center">Tasty.</div>
-        <div class="small right">vibey.</div>
-      </div>
-      <div class="accent"></div>
-    </header>
+<header>
+  <div class="brand">
+    <img src="image/dowa9A.png" alt="Dowa9a Logo" class="logo">
+  </div>
+  <div class="rule"></div>
+  <div class="subrow">
+    <div class="small left">Dowa9y.</div>
+    <div class="small center">Tasty.</div>
+    <div class="small right">vibey.</div>
+  </div>
+  <div class="accent"></div>
+</header>
 
-    <section class="hero-headline">
-      <div class="big">WHO ARE DOWA9A</div>
-      <div class="script">producers ?</div>
-    </section>
+<section class="hero-headline">
+  <div class="big">WHO ARE</div>
+  <div class="script">the producers ?</div>
+</section>
 
-    <section class="image-block">
-      <img src="image/dowa9A.png" alt="Cassettes audio Dowa9a's Producers">
-    </section>
 
     <section class="text-block">
       <p><i>Welcome back! You've heard the vision, you've seen the momentum, but now it's time to meet the true architects of our sound.
@@ -94,8 +93,26 @@
       </div>
     </section>
 
-    <div class="signature">Dowa9y Tasty Vibey</div>
-    <div class="bottom-line"></div>
+<footer class="credits">
+  <p>Made and maintained by 
+    <a href="https://github.com/nullsec0x" target="_blank" rel="noopener noreferrer">Nullsec0x</a> 
+    and 
+    <a href="https://github.com/MDdaoudi" target="_blank" rel="noopener noreferrer">MDdaoudi</a>
+  </p>
+</footer>
+
   </div>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.artist-section').forEach(section => {
+    observer.observe(section);
+  });
+</script>
+
 </body>
 </html>
