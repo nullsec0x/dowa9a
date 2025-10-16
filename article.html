@@ -8,132 +8,227 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family: 'Playfair Display', serif;
-      background:#ffffff;
-      color:#111;
-      padding:30px 20px;
-      display:flex;justify-content:center;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .wrapper{width:100%;max-width:1050px;}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #ffffff;
+      color: #111;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1050px;
+    }
 
     header {
-      text-align: center; 
+      text-align: center;
     }
 
-    .brand{
+    .brand {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .brand img.logo {
+      width: 280px;
+      height: auto;
+      filter: grayscale(100%) contrast(90%);
+      display: inline-block;
+    }
+
+    .rule {
+      height: 3px;
+      background: #111;
+      opacity: 0.8;
+      margin: 6px 0;
+    }
+
+    .subrow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .subrow .small {
+      font-style: italic;
+      font-size: 16px;
+      color: #222;
+    }
+
+    .subrow .small.center {
+      text-align: center;
+    }
+
+    .subrow .small.right {
+      text-align: right;
+    }
+
+    .accent {
+      height: 6px;
+      background: #111;
+      opacity: 0.85;
+      margin: 10px 0 20px 0;
+    }
+
+    .hero-headline {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline .big {
       font-family: 'Cinzel', serif;
-      font-size:64px;
-      letter-spacing:2px;
-      font-weight:700;
-      padding:6px 0;
+      font-size: 90px;
+      letter-spacing: 6px;
+      line-height: 0.9;
+      margin-bottom: 6px;
+      color: #000;
     }
 
-    .rule{height:4px;background:#111;margin:6px 0}
-    .subrow{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      margin-bottom:6px;
+    .hero-headline .script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 68px;
+      color: #333;
+      opacity: 0.9;
     }
-    .subrow .small{font-style:italic;font-size:16px;color:#222}
-    .subrow .small.center{text-align:center}
-    .subrow .small.right{text-align:right}
 
-    .accent{height:8px;background:#111;margin:8px 0 18px 0}
+    .text-block {
+      max-width: 700px;
+      margin: 40px auto;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #222;
+      text-align: justify;
+      letter-spacing: 0.2px;
+    }
 
-    .hero-headline{text-align:center;margin-bottom:18px;}
-    .hero-headline .big{
+    .artist-section {
+      margin-top: 70px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .artist-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .artist-name {
       font-family: 'Cinzel', serif;
-      font-size:92px;
-      letter-spacing:4px;
-      line-height:0.9;
-      margin-bottom:6px;
-    }
-    .hero-headline .script{
-      font-family:'Great Vibes', cursive;
-      font-size:72px;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
     }
 
- 
-    .image-block{
-      margin-top:18px;
-      padding:12px;
-      border:12px solid #fff;
-      text-align:center; 
-    }
-    .image-block img{
-      border:8px solid #fff;
-      width:350px;
-      height:300px;
-      filter:grayscale(100%) contrast(85%);
-      display:inline-block; 
+    .artist-name a {
+      text-decoration: underline wavy black;
+      text-decoration-thickness: 1px;
+      color: black;
+      transition: opacity 0.3s ease;
     }
 
-    .text-block{
-      margin-top:40px;
-      font-size:18px;
-      line-height:1.8;
-      color:#222;
-      text-align:justify;
+    .artist-name a:hover {
+      opacity: 0.6;
     }
 
-    .artist-section{
-      margin-top:50px;
-      text-align:center;
-    }
-    .artist-name{
-      font-family:'Cinzel', serif;
-      font-size:42px;
-      font-weight:700;
-      letter-spacing:2px;
-      margin-bottom:20px;
-    }
-    .artist-image img{
-      width:350px;
-      height:400px;
-      border:8px solid #fff;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
-    .artist-description{
-      margin-top:20px;
-      font-size:18px;
-      line-height:1.8;
-      color:#222;
-      text-align:justify;
+    .artist-image img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border: 8px solid #fff;
+      filter: grayscale(100%) contrast(85%);
     }
 
-    .signature{
-      margin-top:30px;
-      text-align:center;
-      font-family:'Great Vibes', cursive;
-      font-size:42px;
+    .artist-description {
+      max-width: 700px;
+      margin: 20px auto 0 auto;
+      font-size: 18px;
+      line-height: 1.9;
+      color: #222;
+      text-align: justify;
+      letter-spacing: 0.2px;
     }
 
-    .bottom-line{
-      height:4px;
-      background:#111;
-      margin-top:10px;
+    .credits {
+      margin-top: 80px;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #111;
     }
 
-    @media (max-width:900px){
-      .brand{font-size:48px}
-      .hero-headline .big{font-size:56px}
-      .hero-headline .script{font-size:44px}
+    .credits a {
+      color: #000;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      transition: opacity 0.3s ease;
     }
-    @media (max-width:480px){
-      .subrow{grid-template-columns:1fr}
-      .brand{font-size:36px;text-align:center}
-      .hero-headline .big{font-size:34px}
-      .hero-headline .script{font-size:28px}
+
+    .credits a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 900px) {
+      .brand img.logo {
+        width: 200px;
+      }
+      .hero-headline .big {
+        font-size: 56px;
+      }
+      .hero-headline .script {
+        font-size: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .subrow {
+        grid-template-columns: 1fr;
+      }
+      .subrow .small {
+        text-align: center;
+        font-size: 14px;
+      }
+      .hero-headline .big {
+        font-size: 36px;
+      }
+      .hero-headline .script {
+        font-size: 28px;
+      }
+      .text-block,
+      .artist-description {
+        font-size: 16px;
+      }
+      .artist-name {
+        font-size: 32px;
+      }
+      .credits {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
     <header>
-      <div class="brand">Dowa9a</div>
+      <div class="brand">
+        <img src="image/dowa9A.png" alt="Dowa9a Logo" class="logo">
+      </div>
       <div class="rule"></div>
       <div class="subrow">
         <div class="small left">Dowa9y.</div>
@@ -144,82 +239,98 @@
     </header>
 
     <section class="hero-headline">
-      <div class="big">WHO ARE DOWA9A</div>
-      <div class="script">producers ?</div>
-    </section>
-
-    <section class="image-block">
-      <img src="image/dowa9A.png" alt="Cassettes audio Dowa9a's Producers">
+      <div class="big">WHO ARE</div>
+      <div class="script">the producers ?</div>
     </section>
 
     <section class="text-block">
       <p><i>Welcome back! You've heard the vision, you've seen the momentum, but now it's time to meet the true architects of our sound.
-            At DOWA9A, we don't just release music; we forge new sonic territories. The music that drives us forward—the tracks that define the next wave of Arabic sound—start with the unparalleled talent you're about to meet. These individuals don't follow trends; they set the pace. They're the ones up late, turning raw ideas into absolute fire. Get ready to salute the backbone of our label.
-            Please give a huge welcome to the incredible producers of DOWA9A...</i></p><br>
+      At DOWA9A, we don't just release music; we forge new sonic territories. The music that drives us forward—the tracks that define the next wave of Arabic sound—start with the unparalleled talent you're about to meet. These individuals don't follow trends; they set the pace. They're the ones up late, turning raw ideas into absolute fire. Get ready to salute the backbone of our label.
+      Please give a huge welcome to the incredible producers of DOWA9A...</i></p><br>
     </section>
 
     <section class="artist-section">
-      <div class="artist-name"><a href="https://www.instagram.com/ussef.beat777/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">ussef777</a></div>
+      <div class="artist-name"><a href="https://www.instagram.com/ussef.beat777/" target="_blank" rel="noopener noreferrer">ussef777</a></div>
       <div class="artist-image">
         <img src="image/ussef777.jpg" alt="ussef777">
       </div>
       <div class="artist-description">
         <p>Ussef777 is a Moroccan music producer known for creating innovative beats that fuse electronic vibes, hip-hop energy, and cinematic melodies. With a passion for sound 
-          design and storytelling, he transforms raw ideas into tracks that move both the mind and the body.</p>
+        design and storytelling, he transforms raw ideas into tracks that move both the mind and the body.</p>
         <p>Driven by creativity and a vision to inspire, Ussef777 is building his own signature style — one that pushes boundaries while 
-          staying true to authentic emotion. Whether in the studio or online, his music reflects dedication, originality, and a deep love for he craft.</p>
+        staying true to authentic emotion. Whether in the studio or online, his music reflects dedication, originality, and a deep love for his craft.</p>
       </div>
     </section>
 
     <section class="artist-section">
-      <div class="artist-name"><a href="https://www.instagram.com/islucaaa/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">luca mus!c</a></div>
+      <div class="artist-name"><a href="https://www.instagram.com/islucaaa/" target="_blank" rel="noopener noreferrer">luca mus!c</a></div>
       <div class="artist-image">
-        <img src="image/luca-music.jpg" alt="">
+        <img src="image/luca-music.jpg" alt="luca mus!c">
       </div>
       <div class="artist-description">
         <p>LUCA MUS!C seems to be an emerging music producer and artist known for his unique sound, blending hip-hop energy with cinematic melodies.
-           At just 19 years old, he's already made a name for himself with two notable projects: <a href="https://open.spotify.com/intl-fr/album/64udCfdcMantoQDkjDnvUg?si=m8jmGcnMS7W4S5efm6ysdA" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">"VISION INFINIE"</a> and <a href="https://open.spotify.com/intl-fr/album/4UyjumKnFiQTRwvzbqYk4w?si=BProVbIxQ1GO-Ax5l6_Blw" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">"THE WAR WITHIN"</a>. These projects showcase his creativity and passion for music, featuring collaborations with other artists and available on all major streaming platforms.</p>
+        At just 19 years old, he's already made a name for himself with two notable projects: 
+        <a href="https://open.spotify.com/intl-fr/album/64udCfdcMantoQDkjDnvUg" target="_blank" rel="noopener noreferrer">"VISION INFINIE"</a> 
+        and 
+        <a href="https://open.spotify.com/intl-fr/album/4UyjumKnFiQTRwvzbqYk4w" target="_blank" rel="noopener noreferrer">"THE WAR WITHIN"</a>. 
+        These projects showcase his creativity and passion for music, featuring collaborations with other artists and available on all major streaming platforms.</p>
       </div>
     </section>
 
     <section class="artist-section">
-      <div class="artist-name"><a href="https://www.instagram.com/antonio_yassine/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">Antoriquo</a></div>
+      <div class="artist-name"><a href="https://www.instagram.com/antonio_yassine/" target="_blank" rel="noopener noreferrer">Antoriquo</a></div>
       <div class="artist-image">
-        <img src="image/antoriquo.jpg" alt="">
+        <img src="image/antoriquo.jpg" alt="Antoriquo">
       </div>
       <div class="artist-description">
-        <p>Antoriquo is the producer alias of Moroccan artist Yassine Mohsini, based in Casablanca (Bourgogne). His sound fuses dark boom bap, abstract hip-hop, house punk, and experimental textures, shaping raw underground atmospheres that resist the mainstream. Under the name Yung P, he steps to the mic, rapping with the same unfiltered energy and grit found in his beats. Together, Antoriquo and Yung P reflect two sides of one vision  pushing Moroccan hip-hop and alternative sounds forward with honesty, rebellion, and originality.</p>
+        <p>Antoriquo is the producer alias of Moroccan artist Yassine Mohsini, based in Casablanca (Bourgogne). His sound fuses dark boom bap, abstract hip-hop, house punk, and experimental textures, shaping raw underground atmospheres that resist the mainstream. Under the name Yung P, he steps to the mic, rapping with the same unfiltered energy and grit found in his beats. Together, Antoriquo and Yung P reflect two sides of one vision pushing Moroccan hip-hop and alternative sounds forward with honesty, rebellion, and originality.</p>
       </div>
     </section>
 
     <section class="artist-section">
-      <div class="artist-name"><a href="https://www.instagram.com/prod.cxlltur/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">cxlltur</a></div>
+      <div class="artist-name"><a href="https://www.instagram.com/prod.cxlltur/" target="_blank" rel="noopener noreferrer">cxlltur</a></div>
       <div class="artist-image">
-        <img src="image/cxlltur.jpg" alt="">
+        <img src="image/cxlltur.jpg" alt="cxlltur">
       </div>
       <div class="artist-description">
-        <p>Cxlltur, a music producer, beatmaker, and loopmaker from Meknes, Morocco. I started making beats in 2022, first experimenting with FL Studio Mobile, and since then I've been developing my own style.</p>
-        <p>My sound is a mix of experimental, electronic, retro, lofi, emotional, and hip-hop influences, shaped by artists such as Kanye West, Tyler the Creator, Frank Ocean, Radiohead, and Moroccan pioneers like Madd, Shobee, MW, and Keight.</p>
-        <p>He've worked with artists including Badfox, Zeno, Sadluxe, and Zack, with upcoming unreleased projects with Tahades, Veintiuno, and Ayuur. My main goal is to elevate Moroccan hip-hop production and become one of the leading producers both in Morocco and worldwide.</p>
+        <p>Cxlltur, a music producer, beatmaker, and loopmaker from Meknes, Morocco. He started making beats in 2022, first experimenting with FL Studio Mobile, and since then has been developing his own style.</p>
+        <p>His sound is a mix of experimental, electronic, retro, lofi, emotional, and hip-hop influences, shaped by artists such as Kanye West, Tyler the Creator, Frank Ocean, Radiohead, and Moroccan pioneers like Madd, Shobee, MW, and Keight.</p>
+        <p>He has worked with artists including Badfox, Zeno, Sadluxe, and Zack, with upcoming unreleased projects with Tahades, Veintiuno, and Ayuur. His main goal is to elevate Moroccan hip-hop production and become one of the leading producers both in Morocco and worldwide.</p>
       </div>
     </section>
 
     <section class="artist-section">
-      <div class="artist-name"><a href="https://www.instagram.com/moun.pinkshell/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">moun*</a></div>
+      <div class="artist-name"><a href="https://www.instagram.com/moun.pinkshell/" target="_blank" rel="noopener noreferrer">moun*</a></div>
       <div class="artist-image">
-        <img src="image/moun.jpg" alt="">
+        <img src="image/moun.jpg" alt="moun*">
       </div>
       <div class="artist-description">
-        <p>moun* is a young multi media artist that is mainly focused on music originated from Casablanca and now based in Paris, they also makes music under the name pinkshell*. They started making music back 
-          in 2020 when they started learning music production and then they kept developing their sound from rap to rnb to punk, but in 2025 they finally found their own sound with the song (<a href="https://open.spotify.com/intl-fr/track/36fjmNzcjMgfntDlP87hLj?si=bd39b01186674bf5" target="_blank" rel="noopener noreferrer" style="text-decoration: underline wavy black; text-decoration-thickness: 1px; color: black;">monkey on ketamine*</a>). 
-          They describe the sound as coherent chaos, to get to this sound they took inspiration from multiple artists from different genres like (jazz, post punk, hyperpop, emo, rnb, alt rock). In their music moun* try to 
-          talk about topics that matter to our generation like phone addiction, politics, gender identity, and they focus a lot on the overall anxiety that most of our generation feel with all the problems going on in the world right now. 
-          They're debut ep under the name of moun* (body moving through a screen*) is dropping soon and it's a really creative and experimental peace of art that really needs all our attention, moun* is definitely one of the artists you should be following.</p>
+        <p>moun* is a young multimedia artist mainly focused on music, originating from Casablanca and now based in Paris. They also make music under the name pinkshell*. Starting in 2020, moun* has evolved from rap to r&b to punk, and in 2025 found their unique sound with the song 
+        <a href="https://open.spotify.com/intl-fr/track/36fjmNzcjMgfntDlP87hLj" target="_blank" rel="noopener noreferrer">monkey on ketamine*</a>. 
+        They describe their sound as coherent chaos, drawing inspiration from jazz, post punk, hyperpop, emo, rnb, and alt rock.</p>
+        <p>Through their music, moun* explores modern anxieties, politics, identity, and digital life. Their debut EP, <i>body moving through a screen*</i>, is a creative, experimental project that deserves attention — moun* is one of the artists to watch closely.</p>
       </div>
     </section>
 
-    <div class="signature">Dowa9y Tasty Vibey</div>
-    <div class="bottom-line"></div>
+    <footer class="credits">
+      <p>Made and maintained by 
+        <a href="https://github.com/nullsec0x" target="_blank" rel="noopener noreferrer">Nullsec0x</a> 
+        and 
+        <a href="https://github.com/MDdaoudi" target="_blank" rel="noopener noreferrer">MDdaoudi</a>
+      </p>
+    </footer>
   </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.artist-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
