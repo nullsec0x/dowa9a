@@ -1,0 +1,196 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #ffffff;
+      color: #111;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+    }
+
+    .brand {
+      font-family: 'Cinzel', serif;
+      font-size: 64px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      padding: 6px 0;
+    }
+
+    .rule {
+      height: 4px;
+      background: #111;
+      margin: 6px 0;
+    }
+
+    .subrow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 6px;
+      gap: 10px;
+    }
+
+    .subrow .left {
+      text-align: left;
+    }
+    .subrow .center {
+      text-align: center;
+    }
+    .subrow .right {
+      text-align: right;
+    }
+
+    .accent {
+      height: 8px;
+      background: #111;
+      margin: 8px 0 18px 0;
+    }
+
+    /* Hero section */
+    .hero-headline {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .hero-headline .big {
+      font-family: 'Cinzel', serif;
+      font-size: 92px;
+      letter-spacing: 4px;
+      line-height: 0.9;
+      margin-bottom: 6px;
+    }
+
+    .hero-headline .script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 72px;
+    }
+
+    /* Image centrée */
+    .image-block {
+      margin-top: 18px;
+      padding: 12px;
+      border: 12px solid #fff;
+      text-align: center;
+    }
+
+    .image-block img {
+      border: 8px solid #fff;
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      filter: grayscale(100%) contrast(85%);
+      display: inline-block;
+    }
+
+    /* Texte principal */
+    .text-block {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
+      text-align: justify;
+    }
+
+    /* Section artiste */
+    .artist-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .artist-name {
+      font-family: 'Cinzel', serif;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .artist-image img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border: 8px solid #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .artist-description {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
+      text-align: justify;
+    }
+
+    /* Signature */
+    .signature {
+      margin-top: 30px;
+      text-align: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 42px;
+    }
+
+    /* Bottom line */
+    .bottom-line {
+      height: 4px;
+      background: #111;
+      margin-top: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .brand {
+        font-size: 48px;
+      }
+      .hero-headline .big {
+        font-size: 56px;
+      }
+      .hero-headline .script {
+        font-size: 44px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .subrow {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .subrow .left,
+      .subrow .center,
+      .subrow .right {
+        text-align: center;
+        font-size: 14px;
+      }
+      .brand {
+        font-size: 36px;
+        text-align: center;
+      }
+      .hero-headline .big {
+        font-size: 34px;
+      }
+      .hero-headline .script {
+        font-size: 28px;
+      }
+      .text-block, .artist-description {
+        font-size: 16px;
+      }
+      .artist-name {
+        font-size: 32px;
+      }
+      .signature {
+        font-size: 32px;
+      }
+    }
