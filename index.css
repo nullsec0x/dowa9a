@@ -1,196 +1,218 @@
 * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: 'Playfair Display', serif;
-      background: #ffffff;
-      color: #111;
-      padding: 30px 20px;
-      display: flex;
-      justify-content: center;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .wrapper {
-      width: 100%;
-      max-width: 1050px;
-    }
+body {
+  font-family: 'Playfair Display', serif;
+  background: #ffffff;
+  color: #111;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+}
 
-    /* Header */
-    header {
-      text-align: center;
-    }
+.wrapper {
+  width: 100%;
+  max-width: 1050px;
+}
 
-    .brand {
-      font-family: 'Cinzel', serif;
-      font-size: 64px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      padding: 6px 0;
-    }
+header {
+  text-align: center;
+}
 
-    .rule {
-      height: 4px;
-      background: #111;
-      margin: 6px 0;
-    }
+.brand {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-    .subrow {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      margin-bottom: 6px;
-      gap: 10px;
-    }
+.brand img.logo {
+  width: 280px;
+  height: auto;
+  filter: grayscale(100%) contrast(90%);
+  display: inline-block;
+}
 
-    .subrow .left {
-      text-align: left;
-    }
-    .subrow .center {
-      text-align: center;
-    }
-    .subrow .right {
-      text-align: right;
-    }
+.rule {
+  height: 3px;
+  background: #111;
+  opacity: 0.8;
+  margin: 6px 0;
+}
 
-    .accent {
-      height: 8px;
-      background: #111;
-      margin: 8px 0 18px 0;
-    }
+.subrow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
 
-    /* Hero section */
-    .hero-headline {
-      text-align: center;
-      margin-bottom: 18px;
-    }
+.subrow .left {
+  text-align: left;
+  color: #222;
+  font-style: italic;
+}
+.subrow .center {
+  text-align: center;
+  color: #222;
+  font-style: italic;
+}
+.subrow .right {
+  text-align: right;
+  color: #222;
+  font-style: italic;
+}
 
-    .hero-headline .big {
-      font-family: 'Cinzel', serif;
-      font-size: 92px;
-      letter-spacing: 4px;
-      line-height: 0.9;
-      margin-bottom: 6px;
-    }
+.accent {
+  height: 6px;
+  background: #111;
+  opacity: 0.85;
+  margin: 10px 0 20px 0;
+}
 
-    .hero-headline .script {
-      font-family: 'Great Vibes', cursive;
-      font-size: 72px;
-    }
+.hero-headline {
+  text-align: center;
+  margin-bottom: 24px;
+}
 
-    /* Image centrée */
-    .image-block {
-      margin-top: 18px;
-      padding: 12px;
-      border: 12px solid #fff;
-      text-align: center;
-    }
+.hero-headline .big {
+  font-family: 'Cinzel', serif;
+  font-size: 90px;
+  letter-spacing: 6px;
+  line-height: 0.9;
+  margin-bottom: 6px;
+  color: #000;
+}
 
-    .image-block img {
-      border: 8px solid #fff;
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      filter: grayscale(100%) contrast(85%);
-      display: inline-block;
-    }
+.hero-headline .script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 68px;
+  color: #333;
+  opacity: 0.9;
+}
 
-    /* Texte principal */
-    .text-block {
-      margin-top: 40px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #222;
-      text-align: justify;
-    }
+.text-block {
+  max-width: 700px;
+  margin: 40px auto;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #222;
+  text-align: justify;
+  letter-spacing: 0.2px;
+}
 
-    /* Section artiste */
-    .artist-section {
-      margin-top: 50px;
-      text-align: center;
-    }
+.artist-section {
+  margin-top: 70px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
-    .artist-name {
-      font-family: 'Cinzel', serif;
-      font-size: 42px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
+.artist-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .artist-image img {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      border: 8px solid #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
+.artist-name {
+  font-family: 'Cinzel', serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
 
-    .artist-description {
-      margin-top: 20px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #222;
-      text-align: justify;
-    }
+.artist-name a {
+  text-decoration: underline wavy black;
+  text-decoration-thickness: 1px;
+  color: black;
+  transition: opacity 0.3s ease;
+}
 
-    /* Signature */
-    .signature {
-      margin-top: 30px;
-      text-align: center;
-      font-family: 'Great Vibes', cursive;
-      font-size: 42px;
-    }
+.artist-name a:hover {
+  opacity: 0.6;
+}
 
-    /* Bottom line */
-    .bottom-line {
-      height: 4px;
-      background: #111;
-      margin-top: 10px;
-    }
+.artist-image img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border: 8px solid #fff;
+  filter: grayscale(100%) contrast(85%);
+}
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .brand {
-        font-size: 48px;
-      }
-      .hero-headline .big {
-        font-size: 56px;
-      }
-      .hero-headline .script {
-        font-size: 44px;
-      }
-    }
+.artist-description {
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #222;
+  text-align: justify;
+  letter-spacing: 0.2px;
+}
 
-    @media (max-width: 600px) {
-      .subrow {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-      .subrow .left,
-      .subrow .center,
-      .subrow .right {
-        text-align: center;
-        font-size: 14px;
-      }
-      .brand {
-        font-size: 36px;
-        text-align: center;
-      }
-      .hero-headline .big {
-        font-size: 34px;
-      }
-      .hero-headline .script {
-        font-size: 28px;
-      }
-      .text-block, .artist-description {
-        font-size: 16px;
-      }
-      .artist-name {
-        font-size: 32px;
-      }
-      .signature {
-        font-size: 32px;
-      }
-    }
+.credits {
+  margin-top: 80px;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.credits a {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.3s ease;
+}
+
+.credits a:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .brand img.logo {
+    width: 200px;
+  }
+  .hero-headline .big {
+    font-size: 56px;
+  }
+  .hero-headline .script {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .subrow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .subrow .left,
+  .subrow .center,
+  .subrow .right {
+    text-align: center;
+    font-size: 14px;
+  }
+  .hero-headline .big {
+    font-size: 36px;
+  }
+  .hero-headline .script {
+    font-size: 28px;
+  }
+  .text-block,
+  .artist-description {
+    font-size: 16px;
+  }
+  .artist-name {
+    font-size: 32px;
+  }
+  .credits {
+    font-size: 16px;
+  }
+}
